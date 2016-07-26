@@ -14,10 +14,10 @@ RUN \
     DEBIAN_FRONTEND=noninteractive apt-get -y upgrade && \
     dpkg -l > /var/tmp/dpkg_pre_deps.txt && \
     DEBIAN_FRONTEND=noninteractive apt-get -y install wget git && \
-    wget -nv --no-check-certificate https://storage.googleapis.com/golang/go1.6.2.linux-amd64.tar.gz && \
-    shasum -a 256 go1.6.2.linux-amd64.tar.gz | grep e40c36ae71756198478624ed1bb4ce17597b3c19d243f3f0899bb5740d56212a && \
-    tar -C /usr/local -xzf go1.6.2.linux-amd64.tar.gz && \
-    rm -f go1.6.2.linux-amd64.tar.gz && \
+    wget -nv --no-check-certificate https://storage.googleapis.com/golang/go1.6.3.linux-amd64.tar.gz && \
+    shasum -a 256 go1.6.3.linux-amd64.tar.gz | grep cdde5e08530c0579255d6153b08fdb3b8e47caabbe717bc7bcd7561275a87aeb && \
+    tar -C /usr/local -xzf go1.6.3.linux-amd64.tar.gz && \
+    rm -f go1.6.3.linux-amd64.tar.gz && \
     mkdir -p ${GOPATH}/{src,bin,pkg} && \
     cd ${SRC_PATH} && \
     go get github.com/streadway/amqp && \
