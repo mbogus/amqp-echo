@@ -28,6 +28,7 @@ func init() {
 func main() {
 	flag.Parse()
 	forever := make(chan struct{})
+	log.SetFlags(0)
 	for {
 		select {
 		case <-forever:
