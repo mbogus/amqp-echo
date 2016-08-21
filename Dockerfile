@@ -20,8 +20,8 @@ RUN \
     rm -f go1.7.linux-amd64.tar.gz && \
     mkdir -p ${GOPATH}/{src,bin,pkg} && \
     cd ${SRC_PATH} && \
-    go get github.com/streadway/amqp && \
-    go build && \
+    go get -u -ldflags "-s -w" github.com/streadway/amqp && \
+    go build -v -buildmode=exe -ldflags "-s -w" && \
     mkdir -p ${DATA_HOME} && \
     mv amqp-echo ${DATA_HOME} && cp run.sh ${DATA_HOME} && chmod +x ${DATA_HOME}* && \
     cd ${HOME} && \
