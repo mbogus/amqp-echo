@@ -30,7 +30,7 @@ if [ -n "$ECHO_DELAY" ]; then
 fi
 
 _term() {
-  echo "Caught SIGTERM signal!"
+  echo "Received SIGTERM signal"
   kill -TERM "$GO_PID" 2>/dev/null
 }
 
